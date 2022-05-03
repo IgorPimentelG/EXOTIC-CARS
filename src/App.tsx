@@ -1,9 +1,13 @@
-import React from 'react';
 import { Header } from '@components/Layout';
+import Routes from '@routes/index';
+import React from 'react';
 
 function App() {
   return (
-    <Header/>
+    <React.Fragment>
+      <Header/>
+      <Routes/>
+    </React.Fragment>
   );
 }
 

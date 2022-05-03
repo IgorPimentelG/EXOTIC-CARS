@@ -2,8 +2,9 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
-import Theme from 'src/providers/theme/index';
+import Theme from 'src/theme/index';
 import '@assets/fonts/segoe-ui.woff';
+import { BrowserRouter } from 'react-router-dom';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
@@ -11,7 +12,9 @@ const root = ReactDOM.createRoot(
 root.render(
   <React.StrictMode>
     <Theme>
-      <App />
+      <BrowserRouter>
+        <App />
+      </BrowserRouter>
     </Theme>
   </React.StrictMode>
 );
