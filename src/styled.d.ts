@@ -24,6 +24,7 @@ declare module 'styled-components' {
 
         icon: {
             primary: string;
+            secondary: string;
         }
     }
 }

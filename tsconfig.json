@@ -25,9 +25,9 @@
       "@pages/*":      ["./src/pages/*"],
       "@routes/*":     ["./src/routes/*"],
       "@shared/*":     ["./src/shared/*"],
-      "@theme/*":      ["src/theme/*"],
+      "@theme/*":      ["./src/theme/*"],
       "@assets/*":     ["./src/assets/*"],
-      "@data/*":       ["./data/*"]
+      "@data/*":       ["./src/data/*"],
     }
   },
   "include": [

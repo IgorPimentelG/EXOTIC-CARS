@@ -25,7 +25,8 @@ const Theme: React.FC<{ children: any }> = ({ children }) => {
         }, 
 
         icon: {
-            primary: '#C4C4C4'
+            primary: '#C4C4C4',
+            secondary: '#C8C8CA'
         }
     }
 
