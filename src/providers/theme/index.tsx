@@ -1,11 +1,12 @@
-import { ThemeProvider } from 'styled-components';
+import { IconContext } from 'react-icons';
+import { ThemeProvider, DefaultTheme } from 'styled-components';
 
 const Theme: React.FC<{ children: any }> = ({ children }) => {
 
-    const config = {
+    const config: DefaultTheme = {
         text: {
             primary: '#313136',
-            secondary: '#656469'
+            secondary: '#656469',
         },
 
         main: {
@@ -21,12 +22,18 @@ const Theme: React.FC<{ children: any }> = ({ children }) => {
         shadow: {
             primary: '#0000001A',
             secondary: '#00000014'
+        }, 
+
+        icon: {
+            primary: '#C4C4C4'
         }
     }
 
     return(
         <ThemeProvider theme={config}>
-            {children}
+            <IconContext.Provider value={{ size: '18px', className: 'global-class-name' }}>
+                {children}
+            </IconContext.Provider>
         </ThemeProvider>
     );
 

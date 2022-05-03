@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
-import Theme from '@theme/index';
+import Theme from 'src/providers/theme/index';
 import '@assets/fonts/segoe-ui.woff';
 
 const root = ReactDOM.createRoot(

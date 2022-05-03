@@ -1,5 +1,5 @@
-import ButtonHighlighted from './ButtonHighlighted';
+import NavButton from './NavButton';
 
 export {
-    ButtonHighlighted
+    NavButton
 };

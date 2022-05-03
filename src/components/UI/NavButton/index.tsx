@@ -1,6 +1,6 @@
 import { Button, Label } from './styles';
 
-const ButtonHighlighted: React.FC<{
+const NavButton: React.FC<{
     children: string;
     primary?: boolean;
 }> = ({ children, primary }) => {
@@ -11,4 +11,4 @@ const ButtonHighlighted: React.FC<{
     );
 }
 
-export default ButtonHighlighted;
+export default NavButton;

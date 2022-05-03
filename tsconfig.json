@@ -25,7 +25,7 @@
       "@pages/*":      ["./src/pages/*"],
       "@routes/*":     ["./src/routes/*"],
       "@shared/*":     ["./src/shared/*"],
-      "@theme/*":      ["./src/theme/*"],
+      "@theme/*":      ["src/providers/theme/*"],
       "@assets/*":     ["./src/assets/*"]
     }
   },

@@ -1,6 +1,6 @@
 import 'styled-components';
 
-declare module 'styled-compoents' {
+declare module 'styled-components' {
     export interface DefaultTheme {
         text: {
             primary: string;
@@ -20,6 +20,10 @@ declare module 'styled-compoents' {
         shadow: {
             primary: string;
             secondary: string;
+        },
+
+        icon: {
+            primary: string;
         }
     }
 }

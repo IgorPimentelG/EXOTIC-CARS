@@ -1,6 +1,6 @@
-import { ButtonHighlighted } from '@components/UI';
+import { NavButton } from '@components/UI';
 import { Filter } from '@components/Layout';
-import { Container, ContainerLogo, ContainerOptions, TextPrimary, TextSecundary } from './styles';
+import { Container, ContainerLogo, Nav, TextPrimary, TextSecundary } from './styles';
 
 const Header = () => {
     return(
@@ -12,15 +12,15 @@ const Header = () => {
 
             <Filter/>
 
-            <ContainerOptions>
-                <ButtonHighlighted>
+            <Nav>
+                <NavButton>
                     Sign Up
-                </ButtonHighlighted>
+                </NavButton>
 
-                <ButtonHighlighted primary>
+                <NavButton primary>
                     Sign In
-                </ButtonHighlighted>
-            </ContainerOptions>
+                </NavButton>
+            </Nav>
         </Container>
     );
 }
