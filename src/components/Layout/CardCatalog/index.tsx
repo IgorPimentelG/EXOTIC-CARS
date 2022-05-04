@@ -1,5 +1,17 @@
-import { Container, Footer, ImageCar, TextModel, TextPrice, Currency, Label, Header, TextBold, Circle, ContainerIcon } from './styles';
 import { Car } from '@shared/model/types/car';
+import { 
+    Container,
+    ContainerIcon, 
+    Footer, 
+    Header,
+    ImageCar, 
+    TextBold,
+    TextModel, 
+    TextPrice, 
+    Label, 
+    Currency, 
+    Circle
+} from './styles';
 
 const Card: React.FC<{ data: Car }> = ({ data }) => {
 
@@ -21,6 +33,9 @@ const Card: React.FC<{ data: Car }> = ({ data }) => {
                 src={require(`../../../assets/images/cars/${data.image}`)}
             />
             <Footer>
+                <div>
+                    
+                </div>
                 <Currency><sup>$</sup></Currency>
                 <TextPrice>{data.rent_price}</TextPrice>
                 <Label>/day</Label>

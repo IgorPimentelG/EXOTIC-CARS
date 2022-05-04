@@ -1,17 +1,12 @@
-import { NavButton } from '@components/UI';
+import { Logo, NavButton } from '@components/UI';
 import { Filter } from '@components/Layout';
-import { Container, ContainerLogo, Nav, TextPrimary, TextSecundary } from './styles';
+import { Container, Nav } from './styles';
 
 const Header = () => {
     return(
         <Container>
-            <ContainerLogo>
-                <TextPrimary>exotic</TextPrimary>
-                <TextSecundary>cars</TextSecundary>
-            </ContainerLogo>
-
+            <Logo/>
             <Filter/>
-
             <Nav>
                 <NavButton>
                     Sign Up

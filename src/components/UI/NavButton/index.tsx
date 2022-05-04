@@ -1,7 +1,7 @@
 import { Button, Label } from './styles';
 
 const NavButton: React.FC<{
-    children: string;
+    children: any;
     primary?: boolean;
 }> = ({ children, primary }) => {
     return(

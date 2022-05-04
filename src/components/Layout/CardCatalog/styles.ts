@@ -10,10 +10,10 @@ export const Container = styled.button`
     border-radius: 20px;
     background-color: ${({theme}) => theme.background.secondary};
 
+    &:hover {
+        background: linear-gradient(45deg, rgba(123, 137, 244, 0.6), rgba(123, 137, 244, 0.3));
+    }
 `;
-// &:hover {
-//     background: linear-gradient(45deg,#7B89F4, #FFF);
-// }
 
 export const ContainerIcon = styled.div`
     display: flex;
@@ -38,6 +38,7 @@ const TextBase = styled.p`
 `;
 
 export const TextBold = styled(TextBase)`
+    text-align: start;
     font-weight: bold;
     text-transform: capitalize;
 `;

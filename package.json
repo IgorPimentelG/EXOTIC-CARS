@@ -146,5 +146,8 @@
     "presets": [
       "react-app"
     ]
+  },
+  "devDependencies": {
+    "@types/react-helmet": "^6.1.5"
   }
 }
