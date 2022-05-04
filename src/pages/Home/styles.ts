@@ -3,7 +3,8 @@ import styled from 'styled-components';
 export const RootContainer = styled.div`
     display: flex;
     flex: 1;
-    padding: 50px;
+    padding: 100px 50px 50px 50px;
+    justify-content: center;
 `;
 
 export const Catalog = styled.section`

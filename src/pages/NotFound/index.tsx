@@ -1,7 +1,7 @@
 import { Head, Logo } from '@components/UI';
-import { TiWarningOutline, TiArrowBack } from 'react-icons/ti';
 import { useNavigate } from 'react-router-dom';
 import { useTheme } from 'styled-components';
+import { TiWarningOutline, TiArrowBack } from 'react-icons/ti';
 import { Button, ContainerMessage, Label, RootContainer, Text, Card } from './styles';
 
 const NotFound = () => { 

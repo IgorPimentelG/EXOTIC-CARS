@@ -39,6 +39,10 @@ export const Button = styled.button`
     border: none;
     cursor: pointer;
     background-color: transparent;
+
+    &:hover {
+        transform: scale(1.2);
+    }
 `;
 
 export const Label = styled.h2`

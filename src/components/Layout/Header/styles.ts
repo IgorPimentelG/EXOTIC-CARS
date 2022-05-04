@@ -2,6 +2,8 @@ import styled from 'styled-components';
 
 export const Container = styled.div`
     display: flex;
+    position: fixed;
+    width: 100%;
     flex-direction: row;
     padding: 20px 100px;
     align-items: center;

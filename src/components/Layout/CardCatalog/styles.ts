@@ -1,5 +1,11 @@
 import styled from 'styled-components';
 
+export const LabelBook = styled.p`
+    color: #FFF;
+    font-style: bold;
+    display: none;
+`;
+
 export const Container = styled.button`
     display: flex;
     flex-direction: column;
@@ -13,9 +19,24 @@ export const Container = styled.button`
     &:hover {
         background: linear-gradient(45deg, rgba(123, 137, 244, 0.6), rgba(123, 137, 244, 0.3));
     }
+
+    &:hover ${LabelBook} {
+        display: inline;
+    }
 `;
 
 export const ContainerIcon = styled.div`
+    display: flex;
+`;
+
+export const ContainerImage = styled.div`
+    display: flex;
+    height: 80%;
+    align-items: center;
+    justify-content: center;
+`;
+
+export const ContainerPrice = styled.div`
     display: flex;
 `;
 
@@ -29,7 +50,7 @@ export const Header = styled.div`
 export const Footer = styled.div`
     display: flex;
     width: 100%;
-    justify-content: flex-end;
+    justify-content: space-between;
     align-items: flex-end;
 `;
 
