@@ -27,6 +27,11 @@ const Theme: React.FC<{ children: any }> = ({ children }) => {
         icon: {
             primary: '#C4C4C4',
             secondary: '#C8C8CA'
+        },
+
+        gradients: {
+            primary: 'linear-gradient(45deg, rgba(170, 173, 244), rgba(221, 205, 241))',
+            secondary: 'linear-gradient(90deg, rgba(101, 100, 105, 0.1), rgba(101, 100, 105, 0.4))'
         }
     }
 

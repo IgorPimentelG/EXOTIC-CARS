@@ -6,6 +6,14 @@ export const LabelBook = styled.p`
     display: none;
 `;
 
+export const Circle = styled.div`
+    margin: 2px;
+    height: 6px;
+    width: 6px;
+    border-radius: 50px;
+    background-color: ${({theme}) => theme.icon.secondary};
+`;
+
 export const Container = styled.button`
     display: flex;
     flex-direction: column;
@@ -17,11 +25,15 @@ export const Container = styled.button`
     background-color: ${({theme}) => theme.background.secondary};
 
     &:hover {
-        background: linear-gradient(45deg, rgba(123, 137, 244, 0.6), rgba(123, 137, 244, 0.3));
+        background: ${({theme}) => theme.gradients.primary};
     }
 
     &:hover ${LabelBook} {
         display: inline;
+    }
+
+    &:hover ${Circle} {
+        background-color: ${({theme}) => theme.text.primary};
     }
 `;
 
@@ -85,12 +97,4 @@ export const Currency = styled(TextBold)`
 
 export const Label = styled(TextModel)`
     text-transform: lowercase;
-`;
-
-export const Circle = styled.div`
-    margin: 2px;
-    height: 6px;
-    width: 6px;
-    border-radius: 50px;
-    background-color: ${({theme}) => theme.icon.secondary};
 `;

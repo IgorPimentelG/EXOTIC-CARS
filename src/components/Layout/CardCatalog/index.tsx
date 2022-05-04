@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import { Car } from '@shared/model/types/car';
 import { 
     Container,
@@ -17,9 +16,9 @@ import {
     Circle,
 } from './styles';
 
-const Card: React.FC<{ data: Car }> = ({ data }) => {
+const Card: React.FC<{ data: Car, onClick: () => void }> = ({ data, onClick }) => {
     return(
-        <Container>
+        <Container onClick={onClick}>
             <Header>
                     <div>
                         <TextBold>{data.brand}</TextBold>

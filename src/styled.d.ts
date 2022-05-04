@@ -26,5 +26,10 @@ declare module 'styled-components' {
             primary: string;
             secondary: string;
         }
+
+        gradients: {
+            primary: string;
+            secondary: string;
+        }
     }
 }

@@ -3,9 +3,11 @@ import catalog from '@data/cars.json';
 import { Catalog, RootContainer } from './styles';
 import { Head, ScrollButton } from '@components/UI';
 import { CardCatalog, Header } from '@components/Layout';
+import { useNavigate } from 'react-router-dom';
 
 const Home = () => {
 
+    const navigate = useNavigate();
     const { cars } = catalog;
     const rootContainerRef = useRef<HTMLDivElement>(null);
     const [showIconScroll, setShowIconSroll] = useState(false);
@@ -14,6 +16,10 @@ const Home = () => {
         window.addEventListener('scroll',scrollListener);
         return () => window.removeEventListener('scroll', scrollListener);
     }, []);
+
+    function carDetailsHandler() {
+        navigate('/car-details');
+    }
 
     function scrollListener() {
         const positionScroll = window.scrollY;
@@ -33,7 +39,7 @@ const Home = () => {
             <RootContainer ref={rootContainerRef}>
                 <Catalog>
                     {cars.map((item, index) => (
-                        <CardCatalog key={index} data={item}/>
+                        <CardCatalog key={index} data={item} onClick={carDetailsHandler}/>
                     ))}
                 </Catalog>
             </RootContainer>

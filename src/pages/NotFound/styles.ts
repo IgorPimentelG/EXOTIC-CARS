@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const RootContainer = styled.div`
+export const RootContainer = styled.main`
     display: flex;
     height: 100vh;
     flex: 1;
