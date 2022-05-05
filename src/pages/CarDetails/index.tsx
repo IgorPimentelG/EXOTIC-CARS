@@ -1,8 +1,13 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Head, HighlightedButton } from '@components/UI';
 import { Header, Slider } from '@components/Layout';
 import squire from '../../assets/images/cars/ferrari_california/squire.png';
 import car from '../../assets/images/cars/ferrari_california/02.png';
+
+import car1 from '../../assets/images/cars/ferrari_california/02.png';
+import car2 from '../../assets/images/cars/ferrari_california/03.png';
+import car3 from '../../assets/images/cars/ferrari_california/04.png';
+
 import { 
     RootContainer, 
     ContainerInfo,
@@ -16,6 +21,23 @@ import {
 } from './styles';
 
 const CarDetails = () => {
+
+    const [sequenceSlider, setSequenceSlider] = useState<string[]>([car3, car1, car2]);
+
+    function nextCarHandler() {
+        setSequenceSlider([
+            sequenceSlider[sequenceSlider.length - 1],
+            ...sequenceSlider.slice(0, sequenceSlider.length - 1)
+        ]);
+    }
+
+    function previousCarHandler() {
+        setSequenceSlider([
+            ...sequenceSlider.slice(1, sequenceSlider.length),
+            sequenceSlider[0],
+        ]);
+    }
+
     return(
        <React.Fragment>
             <Head page='Details'/>
@@ -30,7 +52,7 @@ const CarDetails = () => {
                 </ContainerHeader>
 
                 <ContainerMain>
-                    <HighlightedButton arrowLeft label='Back to catalog'/>
+                    <HighlightedButton arrowLeft label='Back to catalog' onClick={() => {}}/>
                     <ImageMain src={car}/>
                     <ContainerInfo>
                         <Text size={32}>01</Text>
@@ -39,10 +61,14 @@ const CarDetails = () => {
                 </ContainerMain>
 
                 <ContainerBookNow>
-                    <HighlightedButton reversed arrowRight label='Book now'/>
+                    <HighlightedButton reversed arrowRight label='Book now' onClick={() => {}}/>
                 </ContainerBookNow>
 
-                <Slider/>
+                <Slider
+                    sequence={sequenceSlider}
+                    onNext={nextCarHandler}
+                    onPrevius={previousCarHandler}
+                />
             </RootContainer>
        </React.Fragment>
     );
