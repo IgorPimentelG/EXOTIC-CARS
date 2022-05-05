@@ -6,28 +6,20 @@ const Slider: React.FC<{
     onNext: () => void;
     onPrevius: () => void;
 }> = ({ sequence, onNext, onPrevius }) => {
+
     return(
         <Container>
             <div>
                 <HighlightedButton reversed arrowLeft onClick={onPrevius}/>
             </div>
-            <div>
-                <Card>
-                    <ImageCar src={sequence[0]}/>
-                </Card>
-            </div>
+            {sequence.map((path, index) => (
+                <div>
+                    <Card isSelected={index === 1 ? true : false}>
+                        <ImageCar key={Date.now() + Math.random()} src={path}/>
+                    </Card>
+                </div>
 
-            <div>
-                <Card check={true}>
-                    <ImageCar src={sequence[1]}/>
-                </Card>
-            </div>
-
-            <div>
-                <Card>
-                    <ImageCar src={sequence[2]}/>
-                </Card>
-            </div>
+            ))}
             <div>
                 <HighlightedButton reversed arrowRight onClick={onNext} />
             </div>

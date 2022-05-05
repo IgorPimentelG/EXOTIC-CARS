@@ -8,10 +8,31 @@ export const Container = styled.div`
     justify-content: space-between;
     border-radius: 50px;
     background-color: ${({theme}) => theme.background.tertiary};
+
+    @media(max-width: 1240px) {
+        width: 50%;
+    }
+
+    @media(max-width: 1110px) {
+        width: 55%;
+    }
+
+    @media(max-width: 905px) {
+        width: 35%;
+        padding-right: 10px;
+    }
 `;
 
 export const ContainerIcon = styled.div`
     margin: 0 5px;
+`;
+
+export const ContainerInputs = styled.div`
+    display: flex;
+
+    @media(max-width: 905px) {
+        flex-direction: column;
+    }
 `;
 
 export const Period = styled.div`

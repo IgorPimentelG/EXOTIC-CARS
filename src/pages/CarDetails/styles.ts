@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 
 export const RootContainer = styled.main`
     padding: 120px 100px;
@@ -14,15 +14,18 @@ export const ContainerHeader = styled.div`
 export const ContainerMain = styled.section`
     display: flex;
     flex-direction: row;
-    height: 100%;
     margin-top: -30px;
-    align-items: center;
+    align-items: stretch;
     justify-content: space-between;
+`;
+
+export const ContainerNav = styled.div`
+    display: flex;
+    align-items: center;
 `;
 
 export const ContainerInfo = styled.div`
     display: flex;
-    min-height: 100%; 
     flex-direction: column;
     align-items: center;    
 `;
@@ -43,9 +46,10 @@ export const ImageSqueri = styled.img`
     height: 120px;
 `;
 
-export const ImageMain = styled.img`
+export const ImageMain = styled.img<any>`
     height: 400px;
     width: 770px;
+    ${({index}) => index === 1 ? 'display: block' : 'display: none'};
 `;
 
 export const Text = styled(TextBase)<any>`

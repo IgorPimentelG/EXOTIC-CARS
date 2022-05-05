@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
-import { Head, HighlightedButton } from '@components/UI';
+import React, { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { Header, Slider } from '@components/Layout';
-import squire from '../../assets/images/cars/ferrari_california/squire.png';
-import car from '../../assets/images/cars/ferrari_california/02.png';
+import { Head, HighlightedButton } from '@components/UI';
 
+import squire from '../../assets/images/cars/ferrari_california/squire.png';
 import car1 from '../../assets/images/cars/ferrari_california/02.png';
 import car2 from '../../assets/images/cars/ferrari_california/03.png';
 import car3 from '../../assets/images/cars/ferrari_california/04.png';
@@ -17,12 +17,19 @@ import {
     ImageMain, 
     Text, 
     Label,
-    ContainerBookNow
+    ContainerBookNow,
+    ContainerNav
 } from './styles';
 
 const CarDetails = () => {
 
+    const navigate = useNavigate();
+    const [imageCar, setImageCar] = useState(car1);
     const [sequenceSlider, setSequenceSlider] = useState<string[]>([car3, car1, car2]);
+    
+    useEffect(() => {
+        setImageCar(sequenceSlider[1]);
+    }, [sequenceSlider]);
 
     function nextCarHandler() {
         setSequenceSlider([
@@ -36,6 +43,10 @@ const CarDetails = () => {
             ...sequenceSlider.slice(1, sequenceSlider.length),
             sequenceSlider[0],
         ]);
+    }
+
+    function goBackHandler() {
+        navigate('/home');
     }
 
     return(
@@ -52,8 +63,14 @@ const CarDetails = () => {
                 </ContainerHeader>
 
                 <ContainerMain>
-                    <HighlightedButton arrowLeft label='Back to catalog' onClick={() => {}}/>
-                    <ImageMain src={car}/>
+                    <ContainerNav>
+                        <HighlightedButton arrowLeft label='Back to catalog' onClick={goBackHandler}/>
+                    </ContainerNav>
+                    
+                    {sequenceSlider.map((image, index) => (
+                        <ImageMain index={index} src={image}/>
+                    ))}
+                    
                     <ContainerInfo>
                         <Text size={32}>01</Text>
                         <Label size={25}>Red</Label>

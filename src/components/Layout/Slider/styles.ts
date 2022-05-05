@@ -2,13 +2,8 @@ import styled, { keyframes } from 'styled-components';
 
 const fadeAnimation = keyframes`
     0% {
-        opacity: 0.1;
+        opacity: 0;
     }
-
-    50% {
-        opacity: 0.5;
-    }
-
     100% {
         opacity: 1;
     }
@@ -31,12 +26,13 @@ export const Card = styled.div<any>`
     justify-content: center;
     background: ${({theme}) => theme.gradients.primary};
 
-    ${({check}) => check ? `transform: scale(1.4)` : ``};
+    ${({isSelected}) => isSelected ? `transform: scale(1.4)` : ``};
 `;
 
 export const ImageCar = styled.img`
     position: relative;
     right: -30px;
     width: 250px;
-    animation: ${fadeAnimation} 0.5s normal;
+    animation: ${fadeAnimation} 1.5s;
+    animation-fill-mode: backwards;
 `;

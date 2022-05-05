@@ -10,6 +10,14 @@ export const Container = styled.div`
     justify-content: space-between;
     background-color: ${({theme}) => theme.background.primary};
     box-shadow: 0px 10px 50px ${({theme}) => theme.shadow.primary};
+
+    @media(max-width: 1500px) {
+        padding: 20px 70px;
+    }
+
+    @media(max-width: 960px) {
+        padding: 20px 40px;
+    }
 `;
 
 export const Nav = styled.nav`
