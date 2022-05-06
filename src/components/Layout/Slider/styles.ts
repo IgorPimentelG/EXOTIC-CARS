@@ -11,7 +11,7 @@ const fadeAnimation = keyframes`
 
 export const Container = styled.section`
     display: flex;
-    margin: 60px 0;
+    margin-top: 60px;
     align-items: center;
     justify-content: space-between;
 `;

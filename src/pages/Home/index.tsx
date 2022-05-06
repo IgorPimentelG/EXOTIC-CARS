@@ -17,8 +17,8 @@ const Home = () => {
         return () => window.removeEventListener('scroll', scrollListener);
     }, []);
 
-    function carDetailsHandler() {
-        navigate('/car-details');
+    function carDetailsHandler(id: number) {
+        navigate(`/car-details/${id}`);
     }
 
     function scrollListener() {
@@ -39,7 +39,11 @@ const Home = () => {
             <RootContainer ref={rootContainerRef}>
                 <Catalog>
                     {cars.map((item, index) => (
-                        <CardCatalog key={index} data={item} onClick={carDetailsHandler}/>
+                        <CardCatalog 
+                            key={index}
+                            data={item} 
+                            onClick={carDetailsHandler.bind(null, item.id)}
+                        />
                     ))}
                 </Catalog>
             </RootContainer>

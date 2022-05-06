@@ -33,7 +33,7 @@ const Card: React.FC<{ data: Car, onClick: () => void }> = ({ data, onClick }) =
             <ContainerImage>
                     <ImageCar 
                         alt={`Image of car ${data.brand} ${data.model}`}
-                        src={require(`../../../assets/images/cars/${data.image}`)}
+                        src={require(`../../../assets/images/cars${data.image}`)}
                     />
             </ContainerImage>
 

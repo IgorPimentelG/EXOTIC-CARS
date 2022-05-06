@@ -13,9 +13,9 @@ const Slider: React.FC<{
                 <HighlightedButton reversed arrowLeft onClick={onPrevius}/>
             </div>
             {sequence.map((path, index) => (
-                <div>
+                <div key={index}>
                     <Card isSelected={index === 1 ? true : false}>
-                        <ImageCar key={Date.now() + Math.random()} src={path}/>
+                        <ImageCar src={require(`../../../assets/images/cars${path}`)}/>
                     </Card>
                 </div>
 

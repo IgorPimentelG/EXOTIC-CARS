@@ -29,6 +29,8 @@ export const ContainerIcon = styled.div`
 
 export const ContainerInputs = styled.div`
     display: flex;
+    width: 85%;
+    justify-content: space-between;
 
     @media(max-width: 905px) {
         flex-direction: column;

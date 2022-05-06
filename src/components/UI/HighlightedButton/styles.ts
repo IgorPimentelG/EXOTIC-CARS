@@ -12,6 +12,6 @@ export const Button = styled.button<any>`
 `;
 
 export const Label = styled.p<any>`
-    margin: 0 5px;
+    margin: 0 10px;
     color: ${({theme, isReversed}) => isReversed ? '#FFF' : theme.text.primary};
 `;

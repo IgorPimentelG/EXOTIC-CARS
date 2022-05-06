@@ -5,112 +5,112 @@
             "brand": "ferrari",
             "model": "california",
             "rent_price": 725,
-            "image": "01.png"
+            "image": "/ferrari/01.png"
         },
         {
             "id": 2,
             "brand": "porsche",
             "model": "911 turbo s",
             "rent_price": 725,
-            "image": "14.png"
+            "image": "/porsche/01.png"
         },
         {
             "id": 3,
             "brand": "porsche",
             "model": "911 turbo s",
             "rent_price": 725,
-            "image": "02.png"
+            "image": "/porsche/02.png"
         },
         {
             "id": 4,
             "brand": "porsche",
             "model": "911 turbo s",
             "rent_price": 725,
-            "image": "03.png"
+            "image": "/porsche/03.png"
         },
         {
             "id": 5,
             "brand": "porsche",
             "model": "911 gt3 rs",
             "rent_price": 825,
-            "image": "04.png"
+            "image": "/porsche/04.png"
         },
         {
             "id": 6,
             "brand": "bentley",
             "model": "continental gt",
             "rent_price": 825,
-            "image": "05.png"
+            "image": "/bentley/01.png"
         },
         {
             "id": 7,
             "brand": "bmw",
             "model": "m1 competition",
             "rent_price": 825,
-            "image": "06.png"
+            "image": "/bmw/01.png"
         },
         {
             "id": 8,
             "brand": "alfa romeo",
             "model": "4c spider",
             "rent_price": 825,
-            "image": "07.png"
+            "image": "/alfa_romeo/01.png"
         },
         {
             "id": 9,
             "brand": "mclaren",
             "model": "p1 gtr",
             "rent_price": 925,
-            "image": "08.png"
+            "image": "/mclaren/01.png"
         },
         {
             "id": 10,
             "brand": "lamborghini",
             "model": "aventador",
             "rent_price": 925,
-            "image": "09.png"
+            "image": "/lamborghini/01.png"
         },
         {
             "id": 11,
             "brand": "bugatti",
             "model": "veyron spyder",
             "rent_price": 925,
-            "image": "10.png"
+            "image": "/bugatti/01.png"
         },
         {
             "id": 12,
             "brand": "chevrolet",
             "model": "corvett",
             "rent_price": 925,
-            "image": "11.png"
+            "image": "/chevrolet/01.png"
         },
         {
             "id": 13,
             "brand": "ferrari",
             "model": "california",
             "rent_price": 725,
-            "image": "12.png"
+            "image": "/ferrari/02.png"
         },
         {
             "id": 14,
-            "brand": "rolls-royce",
+            "brand": "rolls royce",
             "model": "wraith",
             "rent_price": 725,
-            "image": "13.png"
+            "image": "/rolls_royce/01.png"
         },
         {
             "id": 15,
             "brand": "porsche",
             "model": "911 turbo s",
             "rent_price": 725,
-            "image": "14.png"
+            "image": "/porsche/01.png"
         },
         {
             "id": 16,
-            "brand": "mercedes-benz",
+            "brand": "mercedes benz",
             "model": "amg gts",
             "rent_price": 725,
-            "image": "15.png"
+            "image": "/mercedes_benz/01.png"
         }  
     ]
 }

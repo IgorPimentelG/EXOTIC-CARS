@@ -1,4 +1,4 @@
-import styled, { keyframes } from 'styled-components';
+import styled from 'styled-components';
 
 export const RootContainer = styled.main`
     padding: 120px 100px;
@@ -42,13 +42,14 @@ const TextBase = styled.p`
 
 export const ImageSqueri = styled.img`
     margin-right: 30px;
-    width: 90px;
     height: 120px;
+    max-width: 50%;
 `;
 
 export const ImageMain = styled.img<any>`
     height: 400px;
-    width: 770px;
+    width: 70%;
+    margin-left: 60px;
     ${({index}) => index === 1 ? 'display: block' : 'display: none'};
 `;
 
@@ -56,9 +57,11 @@ export const Text = styled(TextBase)<any>`
     font-size: ${({size}) => size + 'px'};
     font-weight: bold;
     letter-spacing: 2px;
+    text-transform: capitalize;
 `;
 
 export const Label = styled(TextBase)<any>`
     font-size: ${({size}) => size + 'px'};;
     font-weight: lighter;
+    text-transform: ${({capitalize}) => capitalize ? 'capitalize' : 'normal'};
 `;

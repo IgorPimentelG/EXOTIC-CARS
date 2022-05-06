@@ -1,0 +1,212 @@
+{
+    "details": [
+        {
+            "brand": "alfa romeo",
+            "image_squire": "/alfa_romeo/squire.png",
+            "images_car": [
+                {
+                    "image": "/alfa_romeo/details/01.png",
+                    "color": "red"
+                },
+                {
+                    "image": "/alfa_romeo/details/02.png",
+                    "color": "white"
+                },
+                {
+                    "image": "/alfa_romeo/details/03.png",
+                    "color": "black"
+                }
+            ]
+        },
+
+        {
+            "brand": "bentley",
+            "image_squire": "/bentley/squire.png",
+            "images_car": [
+                {
+                    "image": "/bentley/details/01.png",
+                    "color": "gray"
+                },
+                {
+                    "image": "/bentley/details/02.png",
+                    "color": "brown"
+                },
+                {
+                    "image": "/bentley/details/03.png",
+                    "color": "blue"
+                }
+            ]
+        },
+
+        {
+            "brand": "bmw" ,
+            "image_squire": "/bmw/squire.png",
+            "images_car": [
+                {
+                    "image": "/bmw/details/01.png",
+                    "color": "blue"
+                },
+                {
+                    "image": "/bmw/details/02.png",
+                    "color": "white"
+                },
+                {
+                    "image": "/bmw/details/03.png",
+                    "color": "black"
+                }
+            ]
+        },
+
+        {
+            "brand": "bugatti",
+            "image_squire": "/bugatti/squire.png",
+            "images_car": [
+                {
+                    "image": "/bugatti/details/01.png",
+                    "color": "white"
+                },
+                {
+                    "image": "/bugatti/details/02.png",
+                    "color": "orange"
+                },
+                {
+                    "image": "/bugatti/details/03.png",
+                    "color": "black"
+                }
+            ]
+        },
+
+        {
+            "brand": "chevrolet",
+            "image_squire": "/chevrolet/squire.png",
+            "images_car": [
+                {
+                    "image": "/chevrolet/details/01.png",
+                    "color": "white"
+                },
+                {
+                    "image": "/chevrolet/details/02.png",
+                    "color": "gray"
+                },
+                {
+                    "image": "/chevrolet/details/03.png",
+                    "color": "blue"
+                }
+            ]
+        },
+
+        {
+            "brand": "ferrari",
+            "image_squire": "/ferrari/squire.png",
+            "images_car": [
+                {
+                    "image": "/ferrari/details/01.png",
+                    "color": "red"
+                },
+                {
+                    "image": "/ferrari/details/02.png",
+                    "color": "yellow"
+                },
+                {
+                    "image": "/ferrari/details/03.png",
+                    "color": "gray"
+                }
+            ]
+        },
+
+        {
+            "brand": "lamborghini",
+            "image_squire": "/lamborghini/squire.png",
+            "images_car": [
+                {
+                    "image": "/chevrolet/details/01.png",
+                    "color": "yellow"
+                },
+                {
+                    "image": "/chevrolet/details/02.png",
+                    "color": "green"
+                },
+                {
+                    "image": "/chevrolet/details/03.png",
+                    "color": "red"
+                }
+            ]
+        },
+
+        {
+            "brand": "mclaren",
+            "image_squire": "/mclaren/squire.png",
+            "images_car": [
+                {
+                    "image": "/mclaren/details/01.png",
+                    "color": "orange"
+                },
+                {
+                    "image": "/mclaren/details/02.png",
+                    "color": "white"
+                },
+                {
+                    "image": "/mclaren/details/03.png",
+                    "color": "gray"
+                }
+            ]
+        },
+
+        {
+            "brand": "mercedes benz",
+            "image_squire": "/mercedes_benz/squire.png",
+            "images_car": [
+                {
+                    "image": "/mercedes_benz/details/01.png",
+                    "color": "red"
+                },
+                {
+                    "image": "/mercedes_benz/details/02.png",
+                    "color": "white"
+                },
+                {
+                    "image": "/mercedes_benz/details/03.png",
+                    "color": "black"
+                }
+            ]
+        },
+
+        {
+            "brand": "porsche",
+            "image_squire": "/porsche/squire.png",
+            "images_car": [
+                {
+                    "image": "/porsche/details/01.png",
+                    "color": "red"
+                },
+                {
+                    "image": "/porsche/details/02.png",
+                    "color": "white"
+                },
+                {
+                    "image": "/porsche/details/03.png",
+                    "color": "yellow"
+                }
+            ]
+        },
+
+        {
+            "brand": "rolls royce",
+            "image_squire": "/rolls_royce/squire.png",
+            "images_car": [
+                {
+                    "image": "/rolls_royce/details/01.png",
+                    "color": "blue"
+                },
+                {
+                    "image": "/rolls_royce/details/02.png",
+                    "color": "white"
+                },
+                {
+                    "image": "/rolls_royce/details/03.png",
+                    "color": "red"
+                }
+            ]
+        }
+    ]
+}

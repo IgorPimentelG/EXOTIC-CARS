@@ -4,4 +4,10 @@ export type Car = {
     model: string;
     rent_price: number;
     image: string;
-}
+    squeri?: string;
+};
+
+export type CarDetail = {
+    image: string;
+    color: string;
+};
