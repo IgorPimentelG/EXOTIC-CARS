@@ -23,17 +23,49 @@ export const Container = styled.div`
     }
 `;
 
-export const ContainerIcon = styled.div`
-    margin: 0 5px;
+export const ContainerIcon = styled.button`
+    margin-right: 3px;
+    border: none;
+    cursor: pointer;
+    background-color: transparent;
 `;
 
 export const ContainerInputs = styled.div`
     display: flex;
-    width: 85%;
+    width: 70%;
     justify-content: space-between;
 
     @media(max-width: 905px) {
         flex-direction: column;
+    }
+`;
+
+export const Input = styled.input`
+    padding: 2px;
+    border: none;
+    color: ${({theme}) => theme.text.secondary};
+    background-color: transparent;
+
+    &:focus {
+        outline: none;
+    }
+`;
+
+export const Calendar = styled(Input)`
+    width: 70%;
+    position: relative;
+
+    &::-webkit-calendar-picker-indicator {
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: auto;
+        width: auto;
+        cursor: pointer;
+        position: absolute;
+        color: transparent;
+        background: transparent;
     }
 `;
 
@@ -45,7 +77,6 @@ export const Period = styled.div`
 export const Option = styled.button`
     display: flex;
     flex-direction: row;
-    margin: 5px;
     border: none;
     cursor: pointer;
     align-items: center;

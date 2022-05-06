@@ -1,36 +1,54 @@
-import { Container, ContainerIcon, ContainerInputs, Option, Period, Search } from './styles';
+import { useRef } from 'react';
+import { useTheme } from 'styled-components';
 import { FaMapMarkerAlt } from 'react-icons/fa';
 import { IoCalendarSharp, IoSearchSharp } from 'react-icons/io5';
-import { useTheme } from 'styled-components';
+import { 
+    Container,
+    ContainerIcon, 
+    ContainerInputs, 
+    Option,
+    Period, 
+    Search, 
+    Input, 
+    Calendar 
+} from './styles';
 
 const Filter = () => {
 
     const theme = useTheme();
     const iconColor = theme.icon.primary;
 
+    const startDateRef = useRef<HTMLInputElement>(null);
+    const endDateRef = useRef<HTMLInputElement>(null);
+    const locationRef = useRef<HTMLInputElement>(null);
+
+    const iconStartDateHandler = () => startDateRef.current!.focus();
+    const iconEndDateHandler = () => endDateRef.current!.focus();
+    const iconLocationHandler = () => locationRef.current!.focus();
+
     return(
         <Container>
             <ContainerInputs>
                 <Option>
-                    <ContainerIcon>
+                    <ContainerIcon onClick={iconLocationHandler}>
                         <FaMapMarkerAlt color={iconColor}/>
                     </ContainerIcon>
-                    North Carolina, NC 90025
+                    <Input placeholder='Select the location' ref={locationRef}/>
                 </Option>
 
                 <Period>
                     <Option>
-                        <ContainerIcon>
+                        <ContainerIcon onClick={iconStartDateHandler}>
                             <IoCalendarSharp color={iconColor}/>
                         </ContainerIcon>
-                        11/03/2021
+                        <Calendar type='date' ref={startDateRef}/>
                     </Option>
 
                     <Option>
-                        <ContainerIcon>
+                        <ContainerIcon onClick={iconEndDateHandler}>
                             <IoCalendarSharp color={iconColor}/>
                         </ContainerIcon>
-                        12/12/2021
+                        <Calendar type='date' ref={endDateRef}/>
                     </Option>
                 </Period>
             </ContainerInputs>
