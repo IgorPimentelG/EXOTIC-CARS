@@ -24,10 +24,11 @@
       "@components/*": ["./src/components/*"],
       "@pages/*":      ["./src/pages/*"],
       "@routes/*":     ["./src/routes/*"],
-      "@shared/*":     ["./src/shared/*"],
+      "@model/*":      ["./src/model/*"],
       "@theme/*":      ["./src/theme/*"],
       "@assets/*":     ["./src/assets/*"],
       "@data/*":       ["./src/data/*"],
+      "@hooks/*":      ["./src/hooks/*"]
     }
   },
   "include": [

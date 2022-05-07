@@ -1,16 +1,18 @@
 import React, { useEffect, useRef, useState } from 'react';
-import catalog from '@data/cars.json';
+import { useNavigate } from 'react-router-dom';
 import { Catalog, RootContainer } from './styles';
 import { Head, ScrollButton } from '@components/UI';
 import { CardCatalog, Header } from '@components/Layout';
-import { useNavigate } from 'react-router-dom';
+import { useFilter } from '@hooks/useFilter';
+import { DataFilter } from '@model/types/filter';
 
 const Home = () => {
 
     const navigate = useNavigate();
-    const { cars } = catalog;
+    const { filterLocation, filterPeriod, getCatalog } = useFilter();
     const rootContainerRef = useRef<HTMLDivElement>(null);
     const [showIconScroll, setShowIconSroll] = useState(false);
+    const [catalog, setCatalog] = useState(getCatalog());
 
     useEffect(() => {
         window.addEventListener('scroll',scrollListener);
@@ -31,14 +33,22 @@ const Home = () => {
         }
     }
 
+    function filterHandler(data: DataFilter) {
+        if( !data.startDate && !data.endDate) {
+            setCatalog(() => filterLocation(data.location));
+        } else {
+            setCatalog(() => filterPeriod(data));
+        }
+    }
+
     return(
         <React.Fragment>
-            <Header/>
+            <Header onFilter={filterHandler}/>
             <Head page='Home'/>
             {showIconScroll && <ScrollButton containerRef={rootContainerRef}/>}
             <RootContainer ref={rootContainerRef}>
                 <Catalog>
-                    {cars.map((item, index) => (
+                    {catalog.map((item, index) => (
                         <CardCatalog 
                             key={index}
                             data={item} 

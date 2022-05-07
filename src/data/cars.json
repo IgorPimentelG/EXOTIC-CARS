@@ -5,112 +5,177 @@
             "brand": "ferrari",
             "model": "california",
             "rent_price": 725,
-            "image": "/ferrari/01.png"
+            "image": "/ferrari/01.png",
+            "availability": {
+                "regions": ["North Carolina - NC", "South Carolina - SC"], 
+                "date": ["2022-05-06", "2022-05-10"]
+            }
         },
         {
             "id": 2,
             "brand": "porsche",
             "model": "911 turbo s",
             "rent_price": 725,
-            "image": "/porsche/01.png"
+            "image": "/porsche/01.png",
+            "availability": {
+                "regions": ["North Carolina - NC", "South Carolina - SC"], 
+                "date": ["2022-05-06", "2022-05-20"]
+            }
+            
         },
         {
             "id": 3,
             "brand": "porsche",
             "model": "911 turbo s",
             "rent_price": 725,
-            "image": "/porsche/02.png"
+            "image": "/porsche/02.png",
+            "availability": {
+                "regions": ["North Carolina - NC", "South Carolina - SC"], 
+                "date": ["2022-05-06", "2022-05-20"]
+            }
         },
         {
             "id": 4,
             "brand": "porsche",
             "model": "911 turbo s",
             "rent_price": 725,
-            "image": "/porsche/03.png"
+            "image": "/porsche/03.png",
+            "availability": {
+                "regions": ["North Carolina - NC", "South Carolina - SC"], 
+                "date": ["2022-05-06", "2022-05-20"]
+            }
         },
         {
             "id": 5,
             "brand": "porsche",
             "model": "911 gt3 rs",
             "rent_price": 825,
-            "image": "/porsche/04.png"
+            "image": "/porsche/04.png",
+            "availability": {
+                "regions": ["North Carolina - NC", "South Carolina - SC"], 
+                "date": ["2022-05-06", "2022-05-20"]
+            }
         },
         {
             "id": 6,
             "brand": "bentley",
             "model": "continental gt",
             "rent_price": 825,
-            "image": "/bentley/01.png"
+            "image": "/bentley/01.png",
+            "availability": {
+                "regions": ["North Carolina - NC", "South Carolina - SC"], 
+                "date": ["2022-05-06", "2022-05-20"]
+            }
         },
         {
             "id": 7,
             "brand": "bmw",
             "model": "m1 competition",
             "rent_price": 825,
-            "image": "/bmw/01.png"
+            "image": "/bmw/01.png",
+            "availability": {
+                "regions": ["North Carolina - NC", "South Carolina - SC"], 
+                "date": ["2022-05-06", "2022-05-20"]
+            }
         },
         {
             "id": 8,
             "brand": "alfa romeo",
             "model": "4c spider",
             "rent_price": 825,
-            "image": "/alfa_romeo/01.png"
+            "image": "/alfa_romeo/01.png",
+            "availability": {
+                "regions": ["North Carolina - NC", "South Carolina - SC"], 
+                "date": ["2022-05-06", "2022-05-20"]
+            }
         },
         {
             "id": 9,
             "brand": "mclaren",
             "model": "p1 gtr",
             "rent_price": 925,
-            "image": "/mclaren/01.png"
+            "image": "/mclaren/01.png",
+            "availability": {
+                "regions": ["North Carolina - NC", "South Carolina - SC"], 
+                "date": ["2022-05-06", "2022-05-20"]
+            }
         },
         {
             "id": 10,
             "brand": "lamborghini",
             "model": "aventador",
             "rent_price": 925,
-            "image": "/lamborghini/01.png"
+            "image": "/lamborghini/01.png",
+            "availability": {
+                "regions": ["North Carolina - NC", "South Carolina - SC"], 
+                "date": ["2022-05-06", "2022-05-20"]
+            }
         },
         {
             "id": 11,
             "brand": "bugatti",
             "model": "veyron spyder",
             "rent_price": 925,
-            "image": "/bugatti/01.png"
+            "image": "/bugatti/01.png",
+            "availability": {
+                "regions": ["North Carolina - NC", "South Carolina - SC"], 
+                "date": ["2022-05-06", "2022-05-20"]
+            }
         },
         {
             "id": 12,
             "brand": "chevrolet",
             "model": "corvett",
             "rent_price": 925,
-            "image": "/chevrolet/01.png"
+            "image": "/chevrolet/01.png",
+            "availability": {
+                "regions": ["North Carolina - NC", "South Carolina - SC"], 
+                "date": ["2022-05-06", "2022-05-20"]
+            }
         },
         {
             "id": 13,
             "brand": "ferrari",
             "model": "california",
             "rent_price": 725,
-            "image": "/ferrari/02.png"
+            "image": "/ferrari/02.png",
+            "availability": {
+                "regions": ["Nevada - NV", "South Carolina - SC"], 
+                "date": ["2022-05-06", "2022-05-20"]
+            }
         },
         {
             "id": 14,
             "brand": "rolls royce",
             "model": "wraith",
             "rent_price": 725,
-            "image": "/rolls_royce/01.png"
+            "image": "/rolls_royce/01.png",
+            "availability": {
+                "regions": ["Washington - WA", "New Mexico - NM"], 
+                "date": ["2022-05-06", "2022-05-20"]
+            }
         },
         {
             "id": 15,
             "brand": "porsche",
             "model": "911 turbo s",
             "rent_price": 725,
-            "image": "/porsche/01.png"
+            "image": "/porsche/01.png",
+            "availability": {
+                "regions": ["New Work - NY", "Virginia - VA"], 
+                "date": ["2022-05-06", "2022-05-20"]
+            }
         },
         {
             "id": 16,
             "brand": "mercedes benz",
             "model": "amg gts",
             "rent_price": 725,
-            "image": "/mercedes_benz/01.png"
+            "image": "/mercedes_benz/01.png",
+            "availability": {
+                "regions": ["Texas - TX"], 
+                "date": ["2022-05-06", "2022-05-20"]
+            }
         }  
     ]
 }

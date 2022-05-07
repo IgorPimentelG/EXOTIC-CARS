@@ -32,7 +32,7 @@ export const ContainerIcon = styled.button`
 
 export const ContainerInputs = styled.div`
     display: flex;
-    width: 70%;
+    width: 90%;
     justify-content: space-between;
 
     @media(max-width: 905px) {
@@ -40,8 +40,22 @@ export const ContainerInputs = styled.div`
     }
 `;
 
-export const Input = styled.input`
-    padding: 2px;
+export const Select = styled.select`
+    width: 140px;
+    border: none;
+    color: ${({theme}) => theme.text.secondary};
+    background-color: transparent;
+    overflow-y: auto;
+    -webkit-appearance: none;
+
+    &:focus {
+        outline: none;
+    }    
+`;
+
+export const Calendar = styled.input`
+    width: 70%;
+    position: relative;
     border: none;
     color: ${({theme}) => theme.text.secondary};
     background-color: transparent;
@@ -49,11 +63,6 @@ export const Input = styled.input`
     &:focus {
         outline: none;
     }
-`;
-
-export const Calendar = styled(Input)`
-    width: 70%;
-    position: relative;
 
     &::-webkit-calendar-picker-indicator {
         top: 0;

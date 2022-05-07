@@ -1,4 +1,4 @@
-import { Car } from '@shared/model/types/car';
+import { Car } from 'src/model/types/car';
 import { 
     Container,
     ContainerIcon, 

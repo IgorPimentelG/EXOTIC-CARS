@@ -50,6 +50,7 @@ export const ContainerImage = styled.div`
 
 export const ContainerPrice = styled.div`
     display: flex;
+    align-items: flex-end;
 `;
 
 export const Header = styled.div`

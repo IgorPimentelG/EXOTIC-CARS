@@ -16,7 +16,7 @@ import {
     ContainerBookNow,
     ContainerNav
 } from './styles';
-import { Car, CarDetail } from '@shared/model/types/car';
+import { Car, CarDetail } from 'src/model/types/car';
 
 const CarDetails = () => {
 
@@ -71,10 +71,14 @@ const CarDetails = () => {
         navigate('/home');
     }
 
+    function filterHandler() {
+
+    }
+
     return(
        <React.Fragment>
             <Head page='Details'/>
-            <Header/>
+            <Header onFilter={filterHandler}/>
             <RootContainer>
                 <ContainerHeader>
                     <ImageSqueri src={require(`../../assets/images/cars${car.squeri}`)}/>
