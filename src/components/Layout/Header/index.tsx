@@ -1,13 +1,16 @@
-import { Logo, NavButton } from '@components/UI';
-import { Filter } from '@components/Layout';
 import { Container, Nav } from './styles';
+import { Filter } from '@components/Layout';
 import { DataFilter } from '@model/types/filter';
+import { Logo, NavButton } from '@components/UI';
 
-const Header: React.FC<{ onFilter: (data: DataFilter) => void }> = ({ onFilter }) => {
+const Header: React.FC<{
+    rememberFilter: DataFilter | null;
+    onFilter: (data: DataFilter) => void;
+}> = ({ rememberFilter, onFilter }) => {
     return(
         <Container>
             <Logo/>
-            <Filter onFilter={onFilter}/>
+            <Filter onFilter={onFilter} rememberData={rememberFilter}/>
             <Nav>
                 <NavButton>
                     Sign Up

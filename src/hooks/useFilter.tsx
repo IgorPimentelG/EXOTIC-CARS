@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import catalog from '@data/cars.json';
 import { DataFilter } from '@model/types/filter';
+import { toast } from 'react-toastify';
 
 const useFilter = () => {
 
@@ -24,7 +25,7 @@ const useFilter = () => {
 
     function filterLocation(name: string) {
 
-        if(name === 'all') {
+        if( name === 'all' ) {
             return cars;
         }
 
@@ -36,19 +37,28 @@ const useFilter = () => {
     }
 
     function filterPeriod(data: DataFilter) {
-        const locationFilter = filterLocation(data.location);
-        const dateFilter = locationFilter.filter((item) => {
-            const [startDate, endDate] = item.availability.date;
-
-            if( startDate >= data.startDate && endDate <= data.endDate ) {
-                return item;
+        if( data.startDate && data.endDate ) {
+            if( data.startDate <= data.endDate ) {
+                const locationFilter = filterLocation(data.location);
+                const dateFilter = locationFilter.filter((item) => {
+                    const [startDate, endDate] = item.availability.date;
+        
+                    if( startDate >= data.startDate && endDate <= data.endDate ) {
+                        return item;
+                    }
+                });
+        
+                if( dateFilter.length > 0 ) {
+                    return dateFilter;
+                } else {
+                    toast.warn('No cars found');
+                }
+            } else {
+                toast.error('The start date cannot be longer than the end date');
             }
-        });
-
-        if( dateFilter.length > 0 ) {
-            return dateFilter;
+        } else {
+            toast.warn('Inform all dates');
         }
-
         return cars;
     }
 

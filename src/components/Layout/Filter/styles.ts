@@ -24,7 +24,7 @@ export const Container = styled.div`
 `;
 
 export const ContainerIcon = styled.button`
-    margin-right: 3px;
+    margin: 0 3px 0 10px;
     border: none;
     cursor: pointer;
     background-color: transparent;
@@ -50,11 +50,10 @@ export const Select = styled.select`
 
     &:focus {
         outline: none;
-    }    
+    }
 `;
 
 export const Calendar = styled.input`
-    width: 70%;
     position: relative;
     border: none;
     color: ${({theme}) => theme.text.secondary};

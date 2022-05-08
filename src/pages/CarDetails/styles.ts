@@ -43,7 +43,8 @@ const TextBase = styled.p`
 export const ImageSqueri = styled.img`
     margin-right: 30px;
     height: 120px;
-    max-width: 50%;
+    width: 120px;
+    object-fit: contain;
 `;
 
 export const ImageMain = styled.img<any>`

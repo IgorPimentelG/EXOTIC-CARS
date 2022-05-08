@@ -4,15 +4,15 @@ export const Button = styled.button`
     display: flex;
     position: fixed;
     bottom: 70px;
-    right: 30px;
+    right: 70px;
     align-items: center;
     justify-content: center;
-    height: 40px;
-    width: 40px;
+    height: 50px;
+    width: 50px;
     cursor: pointer;
     border: none;
     border-radius: 50px;
-    background-color: rgba(123, 137, 244, 0.4);
+    background-color: rgba(230, 211, 241, 0.8);
 
     &:hover {
         transform: scale(1.1);

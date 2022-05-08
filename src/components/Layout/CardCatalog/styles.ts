@@ -89,6 +89,9 @@ export const TextPrice = styled(TextBold)`
 
 export const ImageCar = styled.img`
     width: 230px;
+    margin-top: 20px;
+    margin-bottom: 5px;
+    object-fit: contain;
 `;
 
 export const Currency = styled(TextBold)`

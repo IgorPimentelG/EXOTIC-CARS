@@ -1,4 +1,4 @@
-import React, { useEffect, useLayoutEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { Header, Slider } from '@components/Layout';
 import { Head, HighlightedButton } from '@components/UI';
 import { useNavigate, useParams } from 'react-router-dom';
@@ -17,6 +17,7 @@ import {
     ContainerNav
 } from './styles';
 import { Car, CarDetail } from 'src/model/types/car';
+import { DataFilter } from '@model/types/filter';
 
 const CarDetails = () => {
 
@@ -71,14 +72,16 @@ const CarDetails = () => {
         navigate('/home');
     }
 
-    function filterHandler() {
-
+    function filterHandler(data: DataFilter) {
+        navigate('/home', {
+            state: data
+        });
     }
 
     return(
        <React.Fragment>
             <Head page='Details'/>
-            <Header onFilter={filterHandler}/>
+            <Header onFilter={filterHandler} rememberFilter={null}/>
             <RootContainer>
                 <ContainerHeader>
                     <ImageSqueri src={require(`../../assets/images/cars${car.squeri}`)}/>
