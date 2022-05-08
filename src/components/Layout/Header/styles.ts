@@ -18,8 +18,23 @@ export const Container = styled.div`
     @media(max-width: 960px) {
         padding: 20px 40px;
     }
+
+    @media(max-width: 620px) {
+        flex-direction: column;
+    }
 `;
 
 export const Nav = styled.nav`
+    display: flex;
     flex-direction: row;
+
+    @media(max-width: 760px) {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    @media(max-width: 620px) {
+        margin-top: 20px;
+        flex-direction: row;
+    }
 `;

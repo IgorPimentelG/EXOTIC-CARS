@@ -66,13 +66,12 @@ const Filter: React.FC<{
                     </ContainerIcon>
                     <Select 
                         ref={locationRef} 
-                        defaultValue={`${rememberData?.location}}`}
                     >
                         <option disabled value=''>Select the location</option>
                         {locations.map((location) => (
                             <option key={location} value={location}>{location}</option>
                         ))}
-                        <option value='all'>All</option>
+                        <option value='all'>All Locations</option>
                     </Select>
                 </Option>
 
