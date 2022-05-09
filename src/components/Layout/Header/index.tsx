@@ -1,27 +1,19 @@
-import { useState, useEffect } from 'react';
 import { Container, Nav } from './styles';
 import { Filter } from '@components/Layout';
 import { DataFilter } from '@model/types/filter';
 import { Logo, NavButton } from '@components/UI';
+import { useDimensios } from '@hooks/useDimensios';
 
 const Header: React.FC<{
     rememberFilter: DataFilter | null;
     onFilter: (data: DataFilter) => void;
 }> = ({ rememberFilter, onFilter }) => {
 
-    const [dimensions, setDimensions] = useState(window.innerWidth);
-
-    useEffect(() => {
-        window.addEventListener('resize', updateDimensionsHandler);
-    }, [dimensions]);
-
-    function updateDimensionsHandler() {
-        setDimensions(window.innerWidth);
-    }
+    const { width } = useDimensios();
 
     return(
         <Container>
-            <Logo horizontal={dimensions <= 760 ? true : false}/>
+            <Logo horizontal={width <= 760 ? true : false}/>
             <Filter onFilter={onFilter} rememberData={rememberFilter}/>
             <Nav>
                 <NavButton>

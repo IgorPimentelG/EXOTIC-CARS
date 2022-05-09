@@ -16,7 +16,9 @@ const Theme: React.FC<{ children: any }> = ({ children }) => {
         background: {
             primary: '#FFF',
             secondary: '#F8F8FA',
-            tertiary: '#F3F1FC'
+            tertiary: '#F3F1FC',
+            quaternary: '#D2D2D2', 
+            quintenary: '#D5D4D4'
         },
 
         shadow: {
@@ -31,7 +33,7 @@ const Theme: React.FC<{ children: any }> = ({ children }) => {
 
         gradients: {
             primary: 'linear-gradient(45deg, rgba(170, 173, 244), rgba(221, 205, 241))',
-            secondary: 'linear-gradient(90deg, rgba(101, 100, 105, 0.1), rgba(101, 100, 105, 0.4))'
+            secondary: 'linear-gradient(90deg, rgba(251, 251, 251), rgba(220, 220, 220))'
         }
     }
 

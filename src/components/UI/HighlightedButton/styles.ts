@@ -4,6 +4,8 @@ export const Button = styled.button<any>`
     display: flex;
     flex-direction: row;
     align-items: center;
+    justify-content: center;
+    width: ${({size}) => (size ? size : '') + 'px'};
     padding: 10px;
     cursor: pointer;
     border-radius: 50px;

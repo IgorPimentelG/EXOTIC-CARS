@@ -3,11 +3,15 @@ import styled from 'styled-components';
 export const Container = styled.div`
     display: flex;
     width: 45%;
-    padding: 3px 3px 3px 15px;
+    padding: 5px 3px 5px 15px;
     align-items: center;
     justify-content: space-between;
     border-radius: 50px;
     background-color: ${({theme}) => theme.background.tertiary};
+
+    @media(min-width: 2000px) {
+        width: 25%;
+    }
 
     @media(max-width: 1240px) {
         width: 50%;
@@ -116,11 +120,9 @@ export const Period = styled.div`
     }
 `;
 
-export const Option = styled.button`
+export const Option = styled.div`
     display: flex;
     flex-direction: row;
-    border: none;
-    cursor: pointer;
     align-items: center;
     justify-content: center;
     background-color: transparent;
@@ -130,7 +132,7 @@ export const Option = styled.button`
 export const Search = styled.button`
     display: flex;
     height: 35px;
-    width: 35px;
+    width: 40px;
     cursor: pointer;
     align-items: center;
     justify-content: center;

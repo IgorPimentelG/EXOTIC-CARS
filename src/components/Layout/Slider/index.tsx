@@ -1,4 +1,4 @@
-import { Card, Container, ImageCar } from './styles';
+import { Card, Container, ImageCar, RootContainer } from './styles';
 import { HighlightedButton } from '@components/UI';
 
 const Slider: React.FC<{
@@ -8,22 +8,36 @@ const Slider: React.FC<{
 }> = ({ sequence, onNext, onPrevius }) => {
 
     return(
-        <Container>
-            <div>
-                <HighlightedButton reversed arrowLeft onClick={onPrevius}/>
-            </div>
-            {sequence.map((path, index) => (
-                <div key={index}>
-                    <Card isSelected={index === 1 ? true : false}>
-                        <ImageCar src={require(`../../../assets/images/cars${path}`)}/>
-                    </Card>
+        <RootContainer>
+            <Container>
+                <div>
+                    <HighlightedButton reversed arrowLeft onClick={onPrevius}/>
                 </div>
+                {sequence.map((path, index) => {
+                    let handler = () => {};
 
-            ))}
-            <div>
-                <HighlightedButton reversed arrowRight onClick={onNext} />
-            </div>
-        </Container>
+                    switch(index) {
+                        case 0:
+                            handler = onPrevius;
+                            break;
+                        case 2:
+                            handler = onNext;
+                            break;
+                    }
+
+                    return(
+                        <div key={index}>
+                            <Card index={index} onClick={handler}>
+                                <ImageCar src={require(`../../../assets/images/cars${path}`)}/>
+                            </Card>
+                        </div>
+                    )
+                })}
+                <div>
+                    <HighlightedButton reversed arrowRight onClick={onNext} />
+                </div>
+            </Container>
+        </RootContainer>
     );
 }
 

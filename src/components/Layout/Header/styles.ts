@@ -3,6 +3,7 @@ import styled from 'styled-components';
 export const Container = styled.div`
     display: flex;
     position: fixed;
+    z-index: 999;
     width: 100%;
     flex-direction: row;
     padding: 20px 100px;

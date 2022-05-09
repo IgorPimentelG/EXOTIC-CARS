@@ -15,6 +15,8 @@ declare module 'styled-components' {
             primary: string;
             secondary: string;
             tertiary: string;
+            quaternary: string;
+            quintenary: string;
         },
 
         shadow: {

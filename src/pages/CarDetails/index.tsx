@@ -14,15 +14,19 @@ import {
     Text, 
     Label,
     ContainerBookNow,
-    ContainerNav
+    ContainerNav,
+    ContainerImage
 } from './styles';
 import { Car, CarDetail } from 'src/model/types/car';
 import { DataFilter } from '@model/types/filter';
+import { useDimensios } from '@hooks/useDimensios';
 
 const CarDetails = () => {
 
     const params = useParams();
     const navigate = useNavigate();
+
+    const { width } = useDimensios();
 
     const [indexSelected, setIndexSelected] = useState(1);
     const [car, setCar] = useState<Car>(
@@ -92,26 +96,46 @@ const CarDetails = () => {
                 </ContainerHeader>
 
                 <ContainerMain>
-                    <ContainerNav>
-                        <HighlightedButton arrowLeft label='Back to catalog' onClick={goBackHandler}/>
-                    </ContainerNav>
+                    { width > 780 && (
+                        <ContainerNav>
+                            <HighlightedButton 
+                                arrowLeft 
+                                label='Back to catalog' 
+                                size={160}
+                                onClick={goBackHandler}
+                            />
+                        </ContainerNav>
+                    )}
                     
-                    {sequenceImagesSlider.map((item, index) => (
-                        <ImageMain 
-                            key={index} 
-                            index={index} 
-                            src={require(`../../assets/images/cars${item.image}`)}
-                        />
-                    ))}
-                    
+                    <ContainerImage>
+                        {sequenceImagesSlider.map((item, index) => (
+                            <ImageMain 
+                                key={index} 
+                                index={index} 
+                                src={require(`../../assets/images/cars${item.image}`)}
+                            />
+                        ))}
+                    </ContainerImage>
+
                     <ContainerInfo>
                         <Text size={38}>{`${indexSelected < 10 ? '0' : ''}${indexSelected}`}</Text>
                         <Label capitalize size={25}>{sequenceImagesSlider[1].color}</Label>
                     </ContainerInfo>
+
+                    { width <= 780 && (
+                        <ContainerNav>
+                            <HighlightedButton 
+                                arrowLeft 
+                                label='Back to catalog'
+                                size={160}
+                                onClick={goBackHandler}
+                            />
+                        </ContainerNav>
+                    )}
                 </ContainerMain>
 
                 <ContainerBookNow>
-                    <HighlightedButton reversed arrowRight label='Book now' onClick={() => {}}/>
+                    <HighlightedButton reversed arrowRight size={160} label='Book now' onClick={() => {}}/>
                 </ContainerBookNow>
 
                 <Slider

@@ -7,15 +7,16 @@ const HighlightedButton: React.FC<{
     label?: string;
     arrowLeft?: boolean;
     arrowRight?: boolean;
+    size?: number;
     onClick: () => void;
-}> = ({ reversed, arrowLeft, arrowRight, label, onClick }) => {
+}> = ({ reversed, arrowLeft, arrowRight, label, size, onClick }) => {
 
     const theme = useTheme();
 
     const defaultColor = reversed ? '#FFF' : theme.text.primary;
 
     return(
-        <Button isReversed={reversed} onClick={onClick}>
+        <Button isReversed={reversed} onClick={onClick} size={size}>
             { arrowLeft && <BsArrowLeft color={defaultColor}/> }
             { label && <Label isReversed={reversed}>{label}</Label> }
             { arrowRight && <BsArrowRight color={defaultColor}/> }
