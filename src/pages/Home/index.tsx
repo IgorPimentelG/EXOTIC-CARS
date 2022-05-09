@@ -12,7 +12,7 @@ const Home = () => {
     const navigate = useNavigate();
     const ctxFilter = useContext(RememberFilterContenxt);
 
-    const { filterLocation, filterPeriod, filterAll, getCatalog } = useFilter();
+    const { filterLocation, filterPeriod, getCatalog } = useFilter();
 
     const rootContainerRef = useRef<HTMLDivElement>(null);
 
@@ -54,10 +54,8 @@ const Home = () => {
     function filterHandler(data: DataFilter) {
         if( !data.startDate && !data.endDate) {
             setCatalog(() => filterLocation(data.location));
-        } else if( !data.location ) {
-            setCatalog(() => filterPeriod(data.startDate, data.endDate));
         } else {
-            setCatalog(() => filterAll(data));
+            setCatalog(() => filterPeriod(data));
         }
     }
 

@@ -20,7 +20,7 @@ export const Container = styled.div`
         padding: 20px 40px;
     }
 
-    @media(max-width: 620px) {
+    @media(max-width: 710px) {
         flex-direction: column;
     }
 `;
@@ -29,12 +29,12 @@ export const Nav = styled.nav`
     display: flex;
     flex-direction: row;
 
-    @media(max-width: 760px) {
+    @media(max-width: 830px) {
         flex-direction: column;
         align-items: center;
     }
 
-    @media(max-width: 620px) {
+    @media(max-width: 710px) {
         margin-top: 20px;
         flex-direction: row;
     }

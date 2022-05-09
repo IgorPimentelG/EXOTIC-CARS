@@ -12,7 +12,7 @@ const Header: React.FC<{
 
     return(
         <Container>
-            <Logo horizontal={width <= 760 ? true : false}/>
+            <Logo horizontal={width <= 830 ? true : false}/>
             <Filter onFilter={onFilter}/>
             <Nav>
                 <NavButton>

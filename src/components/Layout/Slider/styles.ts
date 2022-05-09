@@ -27,7 +27,7 @@ export const Container = styled.section`
 export const Card = styled.button<any>`
     display: flex;
     width: 85%;
-    height: 150px;
+    height: 50%;
     padding-top: 30px;
     border-radius: 5px;
     align-items: center;

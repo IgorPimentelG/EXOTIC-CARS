@@ -6,12 +6,12 @@ export const RootContainer = styled.main`
     padding: 100px 50px 50px 50px;
     justify-content: center;
 
-    @media(max-width: 620px) {
+    @media(max-width: 710px) {
         padding-top: 250px;
     }
 
-    @media(max-width: 320px) {
-        padding-top: 300px;
+    @media(max-width: 420px) {
+        padding-top: 320px;
     }
 `;
 

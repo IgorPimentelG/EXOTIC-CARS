@@ -1,4 +1,6 @@
 import React, { useContext, useEffect, useRef, useState } from 'react';
+import RememberFilterContenxt from 'src/context/filter-context';
+import { toast } from 'react-toastify';
 import { useTheme } from 'styled-components';
 import { useFilter } from '@hooks/useFilter';
 import { FaMapMarkerAlt } from 'react-icons/fa';
@@ -14,8 +16,6 @@ import {
     Calendar,
     CustomSelect
 } from './styles';
-import RememberFilterContenxt from 'src/context/filter-context';
-import { toast } from 'react-toastify';
 
 const Filter: React.FC<{
     onFilter: (data: DataFilter) => void;
@@ -40,7 +40,7 @@ const Filter: React.FC<{
 
     const startDateRef = useRef<HTMLInputElement>(null);
     const endDateRef = useRef<HTMLInputElement>(null);
-    
+
     useEffect(() => {
         const options = locations.map((item) => ({value: item, label: item}));
         setOptionsLocations(() => [{value: 'all', label: 'All'}, ...options]);
@@ -84,7 +84,9 @@ const Filter: React.FC<{
                         value={location}
                         onChange={(value) => setLocation(value as options)}
                         options={optionsLocations}
-                        defaultValue={ctxFilter.location && {value: ctxFilter.location, label: ctxFilter.location}}
+                        defaultValue={ctxFilter.location && 
+                            { value: ctxFilter.location, label: ctxFilter.location }
+                        }                        
                     />
                 </Option>
 

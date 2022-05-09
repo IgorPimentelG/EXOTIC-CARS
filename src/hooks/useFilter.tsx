@@ -24,8 +24,7 @@ const useFilter = () => {
     }, [cars]);
 
     function filterLocation(name: string) {
-
-        if( name === 'all' ) {
+        if( name === 'all' || name === '' ) {
             return cars;
         }
 
@@ -36,36 +35,30 @@ const useFilter = () => {
         });
     }
 
-    function filterPeriod(startDate: string, endDate: string) {
-        if( startDate <= endDate ) {
-            const dateFilter = cars.filter((item) => {
-                
-                const [startDate, endDate] = item.availability.date;
-    
-                if( startDate >= startDate && endDate <= endDate ) {
-                    console.log(item);
-                    return item;
+    function filterPeriod(data: DataFilter) {
+        if( data.startDate && data.endDate ) {
+            if( data.startDate <= data.endDate ) {
+                const locationFilter = filterLocation(data.location);
+                const dateFilter = locationFilter.filter((item) => {
+                    const [startDate, endDate] = item.availability.date;
+                    console.log(data.startDate, startDate);
+                    if( data.startDate >= startDate && data.endDate <= endDate) {
+                        return item;
+                    }
+                });
+        
+                if( dateFilter.length > 0 ) {
+                    return dateFilter;
+                } else {
+                    toast.warn('No cars found');
                 }
-            });
-    
-            if( dateFilter.length > 0 ) {
-                return dateFilter;
             } else {
-                toast.warn('No cars found');
+                toast.error('The start date cannot be longer than the end date');
             }
         } else {
-            toast.error('The start date cannot be longer than the end date');
+            toast.warn('Inform all dates');
         }
         return cars;
-    }
-
-    function filterAll(data: DataFilter) {
-        const locations = filterLocation(data.location);
-        const period = filterPeriod(data.startDate, data.endDate);
-
-        return period.filter((item) => {
-            return locations.filter((local) => local.id === item.id);
-        });
     }
 
     function getLocations() {
@@ -79,7 +72,6 @@ const useFilter = () => {
     return {
         filterLocation,
         filterPeriod,
-        filterAll,
         getLocations,
         getCatalog
     };

@@ -3,13 +3,15 @@ import styled from 'styled-components';
 export const RootContainer = styled.main`
     padding: 120px 100px;
     background: ${({theme}) => theme.gradients.secondary};
+    overflow: auto;
+    height: 100vh;
 
     @media(max-width: 1180px) {
         padding: 120px 50px;
     }
 
     @media(max-width: 880px) {
-        padding: 120px 20px;
+        padding: 140px 20px;
     }
 
     @media(max-width: 620px) {
@@ -20,8 +22,8 @@ export const RootContainer = styled.main`
        padding-bottom: 20px;
     }
 
-    @media(max-width: 380px) {
-        padding-top: 300px;
+    @media(max-width: 420px) {
+        padding-top: 350px;
     }
 `;
 
