@@ -14,16 +14,17 @@ import {
     Currency, 
     LabelBook,
     Circle,
+    ContainerInfo,
 } from './styles';
 
 const Card: React.FC<{ data: Car, onClick: () => void }> = ({ data, onClick }) => {
     return(
         <Container onClick={onClick}>
             <Header>
-                    <div>
+                    <ContainerInfo>
                         <TextBold>{data.brand}</TextBold>
                         <TextModel>{data.model}</TextModel>
-                    </div>
+                    </ContainerInfo>
                     <ContainerIcon>
                         <Circle/>
                         <Circle/>

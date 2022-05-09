@@ -1,23 +1,23 @@
-import React, { useEffect, useRef, useState } from 'react';
-import { useLocation, useNavigate } from 'react-router-dom';
+import React, { useContext, useEffect, useRef, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { Catalog, RootContainer } from './styles';
 import { Head, ScrollButton } from '@components/UI';
 import { CardCatalog, Header } from '@components/Layout';
 import { useFilter } from '@hooks/useFilter';
 import { DataFilter } from '@model/types/filter';
+import RememberFilterContenxt from 'src/context/filter-context';
 
 const Home = () => {
 
     const navigate = useNavigate();
+    const ctxFilter = useContext(RememberFilterContenxt);
 
-    const { state } = useLocation();
-    const { filterLocation, filterPeriod, getCatalog } = useFilter();
+    const { filterLocation, filterPeriod, filterAll, getCatalog } = useFilter();
 
     const rootContainerRef = useRef<HTMLDivElement>(null);
 
     const [catalog, setCatalog] = useState(getCatalog());
     const [showIconScroll, setShowIconSroll] = useState(false);
-    const [rememberFilter, setRememberFilter] = useState<DataFilter | null>(null);
 
     useEffect(() => {
         window.addEventListener('scroll',scrollListener);
@@ -27,11 +27,15 @@ const Home = () => {
     }, []);
 
     useEffect(() => {
-        if( state ) {
-            setRememberFilter(state as DataFilter);
-            filterHandler(state as DataFilter);
+        if( ctxFilter.location || ctxFilter.startDate || ctxFilter.endDate ) {
+            filterHandler({
+                location: ctxFilter.location,
+                startDate: ctxFilter.startDate,
+                endDate: ctxFilter.endDate 
+            });
+            ctxFilter.clear();
         }
-    }, [state]);
+    }, [ctxFilter]);
 
     function carDetailsHandler(id: number) {
         navigate(`/car-details/${id}`);
@@ -50,14 +54,16 @@ const Home = () => {
     function filterHandler(data: DataFilter) {
         if( !data.startDate && !data.endDate) {
             setCatalog(() => filterLocation(data.location));
+        } else if( !data.location ) {
+            setCatalog(() => filterPeriod(data.startDate, data.endDate));
         } else {
-            setCatalog(() => filterPeriod(data));
+            setCatalog(() => filterAll(data));
         }
     }
 
     return(
         <React.Fragment>
-            <Header onFilter={filterHandler} rememberFilter={rememberFilter}/>
+            <Header onFilter={filterHandler}/>
             <Head page='Home'/>
             {showIconScroll && <ScrollButton containerRef={rootContainerRef}/>}
             <RootContainer ref={rootContainerRef}>

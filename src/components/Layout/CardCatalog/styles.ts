@@ -53,6 +53,11 @@ export const ContainerPrice = styled.div`
     align-items: flex-end;
 `;
 
+export const ContainerInfo = styled.div`
+    display: flex;
+    flex-direction: column;
+`;
+
 export const Header = styled.div`
     display: flex;
     width: 100%;
@@ -78,6 +83,7 @@ export const TextBold = styled(TextBase)`
 `;
 
 export const TextModel = styled(TextBase)`
+    text-align: left;
     text-transform: uppercase;
     font-weight: lighter;
 `;

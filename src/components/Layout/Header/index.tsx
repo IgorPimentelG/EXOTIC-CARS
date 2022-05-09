@@ -5,16 +5,15 @@ import { Logo, NavButton } from '@components/UI';
 import { useDimensios } from '@hooks/useDimensios';
 
 const Header: React.FC<{
-    rememberFilter: DataFilter | null;
     onFilter: (data: DataFilter) => void;
-}> = ({ rememberFilter, onFilter }) => {
+}> = ({ onFilter }) => {
 
     const { width } = useDimensios();
 
     return(
         <Container>
             <Logo horizontal={width <= 760 ? true : false}/>
-            <Filter onFilter={onFilter} rememberData={rememberFilter}/>
+            <Filter onFilter={onFilter}/>
             <Nav>
                 <NavButton>
                     Sign Up

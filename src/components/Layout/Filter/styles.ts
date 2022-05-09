@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import Select from 'react-select';
 
 export const Container = styled.div`
     display: flex;
@@ -41,10 +42,9 @@ export const Container = styled.div`
     }
 `;
 
-export const ContainerIcon = styled.button`
+export const ContainerIcon = styled.div`
     margin-right: 5px;
     border: none;
-    cursor: pointer;
     background-color: transparent;
 
     @media(max-width: 320px) {
@@ -63,16 +63,22 @@ export const ContainerInputs = styled.div`
     }
 `;
 
-export const Select = styled.select`
-    border: none;
-    width: auto;
-    color: ${({theme}) => theme.text.secondary};
-    background-color: transparent;
-    overflow-y: auto;
-    -webkit-appearance: none;
+export const CustomSelect = styled(Select)`
+   .Select__control {
+        margin-left: -10px;
+        width: 180px;
+        border: none;
+        font-size: 14px;
+        background-color: transparent;
+        color: ${({theme}) => theme.text.secondary};
+    }
 
-    &:focus {
-        outline: none;
+    .Select__indicator, .Select__indicator-separator  {
+        display: none;
+    }
+
+    .Select__control--is-focused {
+        box-shadow: none;
     }
 `;
 
@@ -131,8 +137,8 @@ export const Option = styled.div`
 
 export const Search = styled.button`
     display: flex;
-    height: 35px;
-    width: 40px;
+    height: 40px;
+    width: 45px;
     cursor: pointer;
     align-items: center;
     justify-content: center;

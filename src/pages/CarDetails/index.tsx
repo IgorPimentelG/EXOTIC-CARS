@@ -1,9 +1,12 @@
-import React, { useState } from 'react';
-import { Header, Slider } from '@components/Layout';
-import { Head, HighlightedButton } from '@components/UI';
-import { useNavigate, useParams } from 'react-router-dom';
+import React, { useContext, useEffect, useState } from 'react';
 import dataCars from '@data/cars.json';
 import cars_details from '@data/cars_details.json';
+import { DataFilter } from '@model/types/filter';
+import { useDimensios } from '@hooks/useDimensios';
+import { Header, Slider } from '@components/Layout';
+import { Car, CarDetail } from 'src/model/types/car';
+import { Head, HighlightedButton } from '@components/UI';
+import { useNavigate, useParams } from 'react-router-dom';
 import { 
     RootContainer, 
     ContainerInfo,
@@ -17,14 +20,15 @@ import {
     ContainerNav,
     ContainerImage
 } from './styles';
-import { Car, CarDetail } from 'src/model/types/car';
-import { DataFilter } from '@model/types/filter';
-import { useDimensios } from '@hooks/useDimensios';
+import RememberFilterContenxt from 'src/context/filter-context';
+
 
 const CarDetails = () => {
 
     const params = useParams();
     const navigate = useNavigate();
+
+    const ctxFilter = useContext(RememberFilterContenxt);
 
     const { width } = useDimensios();
 
@@ -77,15 +81,14 @@ const CarDetails = () => {
     }
 
     function filterHandler(data: DataFilter) {
-        navigate('/home', {
-            state: data
-        });
+        ctxFilter.rememberData(data);
+        navigate('/home');
     }
 
     return(
        <React.Fragment>
             <Head page='Details'/>
-            <Header onFilter={filterHandler} rememberFilter={null}/>
+            <Header onFilter={filterHandler}/>
             <RootContainer>
                 <ContainerHeader>
                     <ImageSqueri src={require(`../../assets/images/cars${car.squeri}`)}/>

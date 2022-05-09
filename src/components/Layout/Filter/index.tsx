@@ -1,6 +1,8 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useContext, useEffect, useRef, useState } from 'react';
 import { useTheme } from 'styled-components';
+import { useFilter } from '@hooks/useFilter';
 import { FaMapMarkerAlt } from 'react-icons/fa';
+import { DataFilter } from '@model/types/filter';
 import { IoCalendarSharp, IoSearchSharp } from 'react-icons/io5';
 import { 
     Container,
@@ -9,41 +11,53 @@ import {
     Option,
     Period, 
     Search, 
-    Calendar, 
-    Select
+    Calendar,
+    CustomSelect
 } from './styles';
-import { useFilter } from '@hooks/useFilter';
-import { DataFilter } from '@model/types/filter';
+import RememberFilterContenxt from 'src/context/filter-context';
+import { toast } from 'react-toastify';
 
 const Filter: React.FC<{
-    rememberData: DataFilter | null;
     onFilter: (data: DataFilter) => void;
-}> = ({ rememberData, onFilter }) => {
+}> = ({ onFilter }) => {
+
+    type options = {
+        value: string;
+        label: string;
+    }
 
     const theme = useTheme();
     const iconColor = theme.icon.primary;
+    const ctxFilter = useContext(RememberFilterContenxt);
 
     const { getLocations } = useFilter();
     const locations = getLocations();
 
     const [minDate, setMinDate] = useState<string>('');
-    const [maxDate, setMaxDate] = useState('');
+    const [maxDate, setMaxDate] = useState(''); 
+    const [location, setLocation] = useState<options>();
+    const [optionsLocations, setOptionsLocations] = useState<options[]>([]);
 
     const startDateRef = useRef<HTMLInputElement>(null);
     const endDateRef = useRef<HTMLInputElement>(null);
-    const locationRef = useRef<HTMLSelectElement>(null);
     
-    const iconStartDateHandler = () => startDateRef.current!.focus();
-    const iconEndDateHandler = () => endDateRef.current!.focus();
-    const iconLocationHandler = () => locationRef.current!.focus();
+    useEffect(() => {
+        const options = locations.map((item) => ({value: item, label: item}));
+        setOptionsLocations(() => [{value: 'all', label: 'All'}, ...options]);
+    }, [locations]);
 
-    function onConfirmFilter() {
-        const location = locationRef.current!.value;
+    function filterHandler() {
         const startDate = startDateRef.current!.value;
         const endDate = endDateRef.current!.value;
 
         if( location || (startDate && endDate) ) {
-            onFilter({ location, startDate, endDate });
+            onFilter({ 
+                location: location?.value ? location.value : '', 
+                startDate, 
+                endDate 
+            });
+        } else {
+            toast.warn('Define filter');
         }
     }
 
@@ -61,23 +75,22 @@ const Filter: React.FC<{
         <Container>
             <ContainerInputs>
                 <Option>
-                    <ContainerIcon onClick={iconLocationHandler}>
+                    <ContainerIcon>
                         <FaMapMarkerAlt color={iconColor}/>
                     </ContainerIcon>
-                    <Select 
-                        ref={locationRef} 
-                    >
-                        <option disabled value=''>Select the location</option>
-                        {locations.map((location) => (
-                            <option key={location} value={location}>{location}</option>
-                        ))}
-                        <option value='all'>All Locations</option>
-                    </Select>
+                    <CustomSelect
+                        classNamePrefix='Select' 
+                        placeholder='Select the location'
+                        value={location}
+                        onChange={(value) => setLocation(value as options)}
+                        options={optionsLocations}
+                        defaultValue={ctxFilter.location && {value: ctxFilter.location, label: ctxFilter.location}}
+                    />
                 </Option>
 
                 <Period>
                     <Option>
-                        <ContainerIcon onClick={iconStartDateHandler}>
+                        <ContainerIcon>
                             <IoCalendarSharp color={iconColor}/>
                         </ContainerIcon>
                         <Calendar 
@@ -85,11 +98,12 @@ const Filter: React.FC<{
                             max={maxDate} 
                             ref={startDateRef} 
                             onChange={onChangeStartDate}
+                            defaultValue={ctxFilter.startDate}
                         />
                     </Option>
 
                     <Option>
-                        <ContainerIcon onClick={iconEndDateHandler}>
+                        <ContainerIcon>
                             <IoCalendarSharp color={iconColor}/>
                         </ContainerIcon>
                         <Calendar 
@@ -97,12 +111,13 @@ const Filter: React.FC<{
                             min={minDate} 
                             ref={endDateRef}
                             onChange={onChangeEndDate}
+                            defaultValue={ctxFilter.endDate}
                         />
                     </Option>
                 </Period>
             </ContainerInputs>
 
-            <Search onClick={onConfirmFilter}>
+            <Search onClick={filterHandler}>
                 <IoSearchSharp color={theme.main.primary}/>
             </Search>
         </Container>
