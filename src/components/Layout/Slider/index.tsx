@@ -28,7 +28,10 @@ const Slider: React.FC<{
                     return(
                         <div key={index}>
                             <Card index={index} onClick={handler}>
-                                <ImageCar src={require(`../../../assets/images/cars${path}`)}/>
+                                <ImageCar 
+                                    alt={`Car slide image ${index + 1}`} 
+                                    src={require(`../../../assets/images/cars${path}`)}
+                                />
                             </Card>
                         </div>
                     )

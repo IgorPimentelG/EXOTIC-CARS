@@ -5,14 +5,17 @@
             "image_squire": "/alfa_romeo/squire.png",
             "images_car": [
                 {
+                    "id": 1,
                     "image": "/alfa_romeo/details/01.png",
                     "color": "red"
                 },
                 {
+                    "id": 2,
                     "image": "/alfa_romeo/details/02.png",
                     "color": "white"
                 },
                 {
+                    "id": 3,
                     "image": "/alfa_romeo/details/03.png",
                     "color": "black"
                 }
@@ -24,14 +27,17 @@
             "image_squire": "/bentley/squire.png",
             "images_car": [
                 {
+                    "id": 1,
                     "image": "/bentley/details/01.png",
                     "color": "gray"
                 },
                 {
+                    "id": 2,
                     "image": "/bentley/details/02.png",
                     "color": "brown"
                 },
                 {
+                    "id": 3,
                     "image": "/bentley/details/03.png",
                     "color": "blue"
                 }
@@ -43,14 +49,17 @@
             "image_squire": "/bmw/squire.png",
             "images_car": [
                 {
+                    "id": 1,
                     "image": "/bmw/details/01.png",
                     "color": "blue"
                 },
                 {
+                    "id": 2,
                     "image": "/bmw/details/02.png",
                     "color": "white"
                 },
                 {
+                    "id": 3,
                     "image": "/bmw/details/03.png",
                     "color": "black"
                 }
@@ -62,14 +71,17 @@
             "image_squire": "/bugatti/squire.png",
             "images_car": [
                 {
+                    "id": 1,
                     "image": "/bugatti/details/01.png",
                     "color": "white"
                 },
                 {
+                    "id": 2,
                     "image": "/bugatti/details/02.png",
                     "color": "orange"
                 },
                 {
+                    "id": 3,
                     "image": "/bugatti/details/03.png",
                     "color": "black"
                 }
@@ -81,14 +93,17 @@
             "image_squire": "/chevrolet/squire.png",
             "images_car": [
                 {
+                    "id": 1,
                     "image": "/chevrolet/details/01.png",
                     "color": "white"
                 },
                 {
+                    "id": 2,
                     "image": "/chevrolet/details/02.png",
                     "color": "gray"
                 },
                 {
+                    "id": 3,
                     "image": "/chevrolet/details/03.png",
                     "color": "blue"
                 }
@@ -100,14 +115,17 @@
             "image_squire": "/ferrari/squire.png",
             "images_car": [
                 {
+                    "id": 1,
                     "image": "/ferrari/details/01.png",
                     "color": "red"
                 },
                 {
+                    "id": 2,
                     "image": "/ferrari/details/02.png",
                     "color": "yellow"
                 },
                 {
+                    "id": 3,
                     "image": "/ferrari/details/03.png",
                     "color": "gray"
                 }
@@ -119,14 +137,17 @@
             "image_squire": "/lamborghini/squire.png",
             "images_car": [
                 {
+                    "id": 1,
                     "image": "/chevrolet/details/01.png",
                     "color": "yellow"
                 },
                 {
+                    "id": 2,
                     "image": "/chevrolet/details/02.png",
                     "color": "green"
                 },
                 {
+                    "id": 3,
                     "image": "/chevrolet/details/03.png",
                     "color": "red"
                 }
@@ -138,14 +159,17 @@
             "image_squire": "/mclaren/squire.png",
             "images_car": [
                 {
+                    "id": 1,
                     "image": "/mclaren/details/01.png",
                     "color": "orange"
                 },
                 {
+                    "id": 2,
                     "image": "/mclaren/details/02.png",
                     "color": "white"
                 },
                 {
+                    "id": 3,
                     "image": "/mclaren/details/03.png",
                     "color": "gray"
                 }
@@ -157,14 +181,17 @@
             "image_squire": "/mercedes_benz/squire.png",
             "images_car": [
                 {
+                    "id": 1,
                     "image": "/mercedes_benz/details/01.png",
                     "color": "red"
                 },
                 {
+                    "id": 2,
                     "image": "/mercedes_benz/details/02.png",
                     "color": "white"
                 },
                 {
+                    "id": 3,
                     "image": "/mercedes_benz/details/03.png",
                     "color": "black"
                 }
@@ -176,14 +203,17 @@
             "image_squire": "/porsche/squire.png",
             "images_car": [
                 {
+                    "id": 1,
                     "image": "/porsche/details/01.png",
                     "color": "red"
                 },
                 {
+                    "id": 2,
                     "image": "/porsche/details/02.png",
                     "color": "white"
                 },
                 {
+                    "id": 3,
                     "image": "/porsche/details/03.png",
                     "color": "yellow"
                 }
@@ -195,14 +225,17 @@
             "image_squire": "/rolls_royce/squire.png",
             "images_car": [
                 {
+                    "id": 1,
                     "image": "/rolls_royce/details/01.png",
                     "color": "blue"
                 },
                 {
+                    "id": 2,
                     "image": "/rolls_royce/details/02.png",
                     "color": "white"
                 },
                 {
+                    "id": 3,
                     "image": "/rolls_royce/details/03.png",
                     "color": "red"
                 }

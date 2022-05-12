@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useRef, useState } from 'react';
-import RememberFilterContenxt from 'src/context/filter-context';
+import RememberFilterContenxt from '@context/filter-context';
 import { toast } from 'react-toastify';
 import { useTheme } from 'styled-components';
 import { useFilter } from '@hooks/useFilter';

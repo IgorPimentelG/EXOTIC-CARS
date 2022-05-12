@@ -1,11 +1,11 @@
 import React, { useContext, useEffect, useRef, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { useFilter } from '@hooks/useFilter';
+import { DataFilter } from '@model/types/filter';
 import { Catalog, RootContainer } from './styles';
 import { Head, ScrollButton } from '@components/UI';
 import { CardCatalog, Header } from '@components/Layout';
-import { useFilter } from '@hooks/useFilter';
-import { DataFilter } from '@model/types/filter';
-import RememberFilterContenxt from 'src/context/filter-context';
+import RememberFilterContenxt from '@context/filter-context';
 
 const Home = () => {
 

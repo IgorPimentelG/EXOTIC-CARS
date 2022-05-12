@@ -16,11 +16,11 @@ const Header: React.FC<{
             <Filter onFilter={onFilter}/>
             <Nav>
                 <NavButton>
-                    Sign Up
+                    Sign up
                 </NavButton>
 
                 <NavButton primary>
-                    Sign In
+                    Sign in
                 </NavButton>
             </Nav>
         </Container>

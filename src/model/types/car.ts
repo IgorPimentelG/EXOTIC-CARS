@@ -8,6 +8,7 @@ export type Car = {
 };
 
 export type CarDetail = {
+    id: number;
     image: string;
     color: string;
 };
